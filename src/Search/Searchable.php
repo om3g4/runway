@@ -57,7 +57,7 @@ class Searchable implements Contract, ContainsQueryableValues, Augmentable
 
     public function toSearchResult(): Result
     {
-        return new ResultInstance($this, 'runway:'.$this->resource->handle());
+        return new ResultInstance($this, 'runway:' . $this->resource->handle());
     }
 
     public function getCpSearchResultTitle()
@@ -78,6 +78,6 @@ class Searchable implements Contract, ContainsQueryableValues, Augmentable
     public function newAugmentedInstance(): Augmented
     {
         return (new AugmentedModel($this->model))
-            ->supplement($this->supplements());
+            ->supplement([]);
     }
 }
